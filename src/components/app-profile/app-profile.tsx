@@ -24,7 +24,7 @@ export class AppProfile {
           <ion-buttons slot="start">
             <ion-back-button defaultHref="/" />
           </ion-buttons>
-          <ion-title>Profile: {this.name}</ion-title>
+          <ion-title>Profile: {this.name} Pouet</ion-title>
         </ion-toolbar>
       </ion-header>,
 
