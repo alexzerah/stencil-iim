@@ -5,7 +5,6 @@ import {Component, h} from '@stencil/core';
     styleUrl: 'app-home.scss'
 })
 export class AppHome {
-
     render() {
         return [
             <ion-header>
