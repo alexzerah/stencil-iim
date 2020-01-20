@@ -1,7 +1,6 @@
 import "@stencil/redux";
 import { Component, h, Prop, State } from "@stencil/core";
 import { configureStore } from "../../store/index";
-import { getRandomQuote } from "../../actions/quote";
 import { AppMenu } from "../app-menu/app-menu";
 
 @Component({
@@ -10,35 +9,9 @@ import { AppMenu } from "../app-menu/app-menu";
 })
 export class AppFav {
     storeUnsubscribe: any;
-    getRandomQuote: typeof getRandomQuote;
-
-    @State()
-    name: MyAppState["quote"];
 
     @Prop({ context: "store" })
     store: any;
-    @Prop() quote: QuoteState;
-
-    async componentWillLoad() {
-        const initialState: MyAppState = {
-            quote: {
-                userId: 1,
-                id: 1,
-                title: "delectus aut autem",
-                completed: false
-            }
-        };
-        this.store.setStore(configureStore(initialState));
-
-        this.store.mapDispatchToProps(this, { getRandomQuote });
-        this.storeUnsubscribe = this.store.mapStateToProps(this, (state: MyAppState) => {
-            return {
-                quote: state.quote
-            };
-        });
-
-        this.getRandomQuote();
-    }
 
     componentDidUnload() {
         this.storeUnsubscribe();
@@ -49,8 +22,6 @@ export class AppFav {
             <app-menu />,
 
             <ion-content class="ion-padding">
-                <app-quote quote={this.quote} />
-
                 <ion-grid>
                     <ion-row>
                         <ion-col>

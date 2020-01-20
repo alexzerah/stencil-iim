@@ -22,9 +22,9 @@ export class AppView {
                 </ion-toolbar>
             </ion-header>,
             <ion-content class="ion-padding">
-                <ion-card>
-                    <img src="https://ionicframework.com/docs/demos/api/card/madison.jpg" />
-                    <ion-fab vertical="center" horizontal="end" edge>
+                <ion-card class="movie-card">
+                    <img class="movie-img" src="https://ionicframework.com/docs/demos/api/card/madison.jpg" />
+                    <ion-fab class="movie-fav" horizontal="end" edge>
                         <ion-fab-button color="warning">
                             <ion-icon name="heart" />
                         </ion-fab-button>
