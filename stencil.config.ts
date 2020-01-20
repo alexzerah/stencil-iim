@@ -1,12 +1,14 @@
-import { Config } from '@stencil/core';
-
-// https://stenciljs.com/docs/config
+import {Config} from '@stencil/core';
+import {sass} from '@stencil/sass';
 
 export const config: Config = {
-  outputTargets: [{
-    type: 'www',
-    serviceWorker: null
-  }],
-  globalScript: 'src/global/app.ts',
-  globalStyle: 'src/global/app.css'
+    plugins: [
+        sass()
+    ],
+    outputTargets: [{
+        type: 'www',
+        serviceWorker: null
+    }],
+    globalScript: 'src/global/app.ts',
+    globalStyle: 'src/global/app.scss'
 };
