@@ -1,6 +1,6 @@
-import quote from "./quote";
+import movies from "./movie";
 import { combineReducers } from "redux";
 
 export default combineReducers({
-    quote
+    movies
 });
