@@ -7,6 +7,25 @@
   "files": [
     "dist/"
   ],
+  "lint-staged": {
+    "src/**/*.tsx": [
+      "prettier --write --tab-width 4 --print-width 160",
+      "git add"
+    ],
+    "src/**/*.d.ts": [
+      "prettier --write --tab-width 4 --print-width 130",
+      "git add"
+    ],
+    "src/**/*.ts": [
+      "prettier --write --tab-width 4 --print-width 130",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "scripts": {
     "build": "stencil build",
     "start": "stencil build --dev --watch --serve",
@@ -16,10 +35,19 @@
   },
   "dependencies": {
     "@ionic/core": "^4.11.7",
+    "@stencil/redux": "^0.1.2",
+    "axios": "^0.19.1",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0",
     "@stencil/router": "1.0.1",
     "rollup-plugin-dotenv": "^0.2.0"
   },
   "devDependencies": {
-    "@stencil/core": "1.8.5"
+    "@stencil/core": "^1.8.4",
+    "@stencil/sass": "^1.1.1",
+    "husky": "^4.0.3",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.19.1"
   }
 }
