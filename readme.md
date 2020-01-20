@@ -1,3 +1,8 @@
+#About us
+We are a team of young Stencil enthusiasts !
+We work in la Defense, and enjoy the parisian life #DevLife #HealthyWorkEnvironment
+Follow us in the street !
+
 # Ionic PWA Toolkit
 
 The PWA Toolkit is a starting point for building Progressive Web Apps using Ionic and Stencil.
