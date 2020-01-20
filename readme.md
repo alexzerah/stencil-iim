@@ -1,6 +1,6 @@
 #About us
 We are a team of young Stencil enthusiasts !
-We work in la Defense, and enjoy the parisian life #DevLife #HealthyWorkEnvironment
+We work at la Defense, and enjoy the parisian life #DevLife #HealthyWorkEnvironment
 Follow us in the street if you are a psycho !
 
 # Ionic PWA Toolkit
