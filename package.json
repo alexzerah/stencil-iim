@@ -15,6 +15,10 @@
     "src/**/*.d.ts": [
       "prettier --write --tab-width 4 --print-width 130",
       "git add"
+    ],
+    "src/**/*.ts": [
+      "prettier --write --tab-width 4 --print-width 130",
+      "git add"
     ]
   },
   "husky": {
