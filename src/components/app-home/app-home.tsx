@@ -22,7 +22,7 @@ export class AppHome {
           check out our docs on <a href="https://stenciljs.com">stenciljs.com</a> to get started.
         </p>
 
-        <ion-button href="/profile/ionic" expand="block">Profile page</ion-button>
+        <ion-button href="/profile" expand="block">Profile page</ion-button>
       </ion-content>
     ];
   }

@@ -15,9 +15,11 @@
     "generate": "stencil generate"
   },
   "dependencies": {
-    "@ionic/core": "^4.11.7"
+    "@ionic/core": "^4.11.7",
+    "@stencil/router": "1.0.1",
+    "rollup-plugin-dotenv": "^0.2.0"
   },
   "devDependencies": {
-    "@stencil/core": "^1.8.4"
+    "@stencil/core": "1.8.5"
   }
 }
