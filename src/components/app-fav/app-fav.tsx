@@ -2,12 +2,13 @@ import "@stencil/redux";
 import { Component, h, Prop, State } from "@stencil/core";
 import { configureStore } from "../../store/index";
 import { getRandomQuote } from "../../actions/quote";
+import { AppMenu } from "../app-menu/app-menu";
 
 @Component({
-    tag: "app-home",
-    styleUrl: "app-home.scss"
+    tag: "app-fav",
+    styleUrl: "app-fav.scss"
 })
-export class AppHome {
+export class AppFav {
     storeUnsubscribe: any;
     getRandomQuote: typeof getRandomQuote;
 
