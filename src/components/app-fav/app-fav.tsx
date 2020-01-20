@@ -1,22 +1,11 @@
 import "@stencil/redux";
-import { Component, h, Prop, State } from "@stencil/core";
-import { configureStore } from "../../store/index";
-import { AppMenu } from "../app-menu/app-menu";
+import { Component, h } from "@stencil/core";
 
 @Component({
     tag: "app-fav",
     styleUrl: "app-fav.scss"
 })
 export class AppFav {
-    storeUnsubscribe: any;
-
-    @Prop({ context: "store" })
-    store: any;
-
-    componentDidUnload() {
-        this.storeUnsubscribe();
-    }
-
     render() {
         return [
             <app-menu />,
