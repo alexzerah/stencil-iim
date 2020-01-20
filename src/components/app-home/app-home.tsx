@@ -1,19 +1,59 @@
-import {Component, h} from '@stencil/core';
+import "@stencil/redux";
+import {Component, h, Prop, State} from '@stencil/core';
+import {configureStore} from "../../store/index";
+import {getRandomQuote} from "../../actions/quote";
 
 @Component({
     tag: 'app-home',
     styleUrl: 'app-home.scss'
 })
 export class AppHome {
-    render() {
-        return [
-            <ion-header>
-                <ion-toolbar color="primary">
-                    <ion-title>Home</ion-title>
-                </ion-toolbar>
-            </ion-header>,
+    storeUnsubscribe: any;
+    getRandomQuote: typeof getRandomQuote;
+
+    @State()
+    name: MyAppState["quote"];
+
+    @Prop({context: "store"})
+    store: any;
+    @Prop() quote: QuoteState;
+
+    async componentWillLoad() {
+        const initialState: MyAppState = {
+            quote: {
+                userId: 1,
+                id: 1,
+                title: "delectus aut autem",
+                completed: false
+            }
+        };
+        this.store.setStore(configureStore(initialState));
+
+        this.store.mapDispatchToProps(this, { getRandomQuote });
+        this.storeUnsubscribe = this.store.mapStateToProps(this, (state: MyAppState) => {
+            return {
+                quote: state.quote
+            };
+        });
+
+        this.getRandomQuote();
+    }
+
+    componentDidUnload() {
+        this.storeUnsubscribe();
+    }
+
+  render() {
+    return [
+          <ion-header>
+            <ion-toolbar color="primary">
+              <ion-title>Home 🏡</ion-title>
+            </ion-toolbar>
+          </ion-header>,
 
             <ion-content class="ion-padding">
+                <app-quote quote={this.quote} />
+
                 <ion-grid>
                     <ion-row>
                         <ion-col>
