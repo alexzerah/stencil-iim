@@ -10,9 +10,14 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-  interface AppHome {}
+  interface AppHome {
+    'quote': QuoteState;
+  }
   interface AppProfile {
     'name': string;
+  }
+  interface AppQuote {
+    'quote': QuoteState;
   }
   interface AppRoot {}
 }
@@ -32,6 +37,12 @@ declare global {
     new (): HTMLAppProfileElement;
   };
 
+  interface HTMLAppQuoteElement extends Components.AppQuote, HTMLStencilElement {}
+  var HTMLAppQuoteElement: {
+    prototype: HTMLAppQuoteElement;
+    new (): HTMLAppQuoteElement;
+  };
+
   interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {}
   var HTMLAppRootElement: {
     prototype: HTMLAppRootElement;
@@ -40,20 +51,27 @@ declare global {
   interface HTMLElementTagNameMap {
     'app-home': HTMLAppHomeElement;
     'app-profile': HTMLAppProfileElement;
+    'app-quote': HTMLAppQuoteElement;
     'app-root': HTMLAppRootElement;
   }
 }
 
 declare namespace LocalJSX {
-  interface AppHome {}
+  interface AppHome {
+    'quote'?: QuoteState;
+  }
   interface AppProfile {
     'name'?: string;
+  }
+  interface AppQuote {
+    'quote'?: QuoteState;
   }
   interface AppRoot {}
 
   interface IntrinsicElements {
     'app-home': AppHome;
     'app-profile': AppProfile;
+    'app-quote': AppQuote;
     'app-root': AppRoot;
   }
 }
@@ -66,6 +84,7 @@ declare module "@stencil/core" {
     interface IntrinsicElements {
       'app-home': LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
       'app-profile': LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
+      'app-quote': LocalJSX.AppQuote & JSXBase.HTMLAttributes<HTMLAppQuoteElement>;
       'app-root': LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
     }
   }
