@@ -1,5 +1,4 @@
 import { Component, Prop, State, h } from '@stencil/core';
-import { sayHello } from '../../helpers/utils';
 
 @Component({
   tag: 'app-profile',
@@ -7,41 +6,60 @@ import { sayHello } from '../../helpers/utils';
 })
 export class AppProfile {
 
-  @State() state = false;
-  @Prop() name: string;
+  private router: HTMLIonRouterElement = document.querySelector('ion-router')
 
-  formattedName(): string {
-    if (this.name) {
-      return this.name.substr(0, 1).toUpperCase() + this.name.substr(1).toLowerCase();
+  @State() user: AppUser;
+  @Prop({ context: "isServer" }) private isServer: boolean;
+
+  componentWillLoad() {
+    console.log(">>>componentWillLoad");
+    if (!this.isServer) {
+      let token = JSON.parse(localStorage.getItem("okta_id_token"));
+      if (token) {
+        this.user = token.claims;
+        console.log(this.user);
+      } else {
+        this.router.push("/login");
+      }
     }
-    return '';
+  }
+
+  componentWillUpdate() {
+    console.log(">>>componentWillUpdate");
+    if (!this.isServer) {
+      let token = JSON.parse(localStorage.getItem("okta_id_token"));
+      if (token) {
+        this.user = token.claims;
+        console.log(this.user);
+      } else {
+        this.router.push("/login");
+      }
+    }
+  }
+
+  logout() {
+    if (!this.isServer) {
+      localStorage.removeItem("okta_id_token");
+      location.reload();
+    }
   }
 
   render() {
-    return [
-      <ion-header>
-        <ion-toolbar color="primary">
-          <ion-buttons slot="start">
-            <ion-back-button defaultHref="/" />
-          </ion-buttons>
-          <ion-title>Profile: {this.name} Pouet</ion-title>
-        </ion-toolbar>
-      </ion-header>,
-
-      <ion-content class="ion-padding">
-        <p>
-          {sayHello()}! My name is {this.formattedName()}. My name was passed in through a
-          route param!
-        </p>
-
-        <ion-item>
-          <ion-label>Setting ({this.state.toString()})</ion-label>
-          <ion-toggle
-            checked={this.state}
-            onIonChange={ev => (this.state = ev.detail.checked)}
-          />
-        </ion-item>
-      </ion-content>
-    ];
+    {this.user}
+    if (this.user) {
+      let keys = Object.keys(this.user);
+      return <div class="app-profile">
+        <h2>{this.user.name}</h2>
+        <ul>
+          {keys.map(key => <li><span>{key}</span>: {this.user[key]}</li>)}
+        </ul>
+        <ion-button onClick={this.logout}>
+          Logout
+      </ion-button>
+      </div>;
+    }
+    else {
+      <div>Oh no ! 😨</div>
+    }
   }
 }

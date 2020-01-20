@@ -1,11 +1,11 @@
 import "@stencil/redux";
-import {Component, h, Prop, State} from '@stencil/core';
-import {configureStore} from "../../store/index";
-import {getRandomQuote} from "../../actions/quote";
+import { Component, h, Prop, State } from "@stencil/core";
+import { configureStore } from "../../store/index";
+import { getRandomQuote } from "../../actions/quote";
 
 @Component({
-    tag: 'app-home',
-    styleUrl: 'app-home.scss'
+    tag: "app-home",
+    styleUrl: "app-home.scss"
 })
 export class AppHome {
     storeUnsubscribe: any;
@@ -14,7 +14,7 @@ export class AppHome {
     @State()
     name: MyAppState["quote"];
 
-    @Prop({context: "store"})
+    @Prop({ context: "store" })
     store: any;
     @Prop() quote: QuoteState;
 
@@ -43,13 +43,13 @@ export class AppHome {
         this.storeUnsubscribe();
     }
 
-  render() {
-    return [
-          <ion-header>
-            <ion-toolbar color="primary">
-              <ion-title>Home 🏡</ion-title>
-            </ion-toolbar>
-          </ion-header>,
+    render() {
+        return [
+            <ion-header>
+                <ion-toolbar color="primary">
+                    <ion-title>Home 🏡</ion-title>
+                </ion-toolbar>
+            </ion-header>,
 
             <ion-content class="ion-padding">
                 <app-quote quote={this.quote} />
@@ -64,8 +64,8 @@ export class AppHome {
                                 </ion-card-header>
 
                                 <ion-card-content>
-                                    Keep close to Nature's heart... and break clear away, once in awhile,
-                                    and climb a mountain or spend a week in the woods. Wash your spirit clean.
+                                    Keep close to Nature's heart... and break clear away, once in awhile, and climb a mountain or spend a week in the woods.
+                                    Wash your spirit clean.
                                 </ion-card-content>
                             </ion-card>
                         </ion-col>
@@ -77,8 +77,8 @@ export class AppHome {
                                 </ion-card-header>
 
                                 <ion-card-content>
-                                    Keep close to Nature's heart... and break clear away, once in awhile,
-                                    and climb a mountain or spend a week in the woods. Wash your spirit clean.
+                                    Keep close to Nature's heart... and break clear away, once in awhile, and climb a mountain or spend a week in the woods.
+                                    Wash your spirit clean.
                                 </ion-card-content>
                             </ion-card>
                         </ion-col>
@@ -90,8 +90,8 @@ export class AppHome {
                                 </ion-card-header>
 
                                 <ion-card-content>
-                                    Keep close to Nature's heart... and break clear away, once in awhile,
-                                    and climb a mountain or spend a week in the woods. Wash your spirit clean.
+                                    Keep close to Nature's heart... and break clear away, once in awhile, and climb a mountain or spend a week in the woods.
+                                    Wash your spirit clean.
                                 </ion-card-content>
                             </ion-card>
                         </ion-col>
@@ -105,8 +105,8 @@ export class AppHome {
                                 </ion-card-header>
 
                                 <ion-card-content>
-                                    Keep close to Nature's heart... and break clear away, once in awhile,
-                                    and climb a mountain or spend a week in the woods. Wash your spirit clean.
+                                    Keep close to Nature's heart... and break clear away, once in awhile, and climb a mountain or spend a week in the woods.
+                                    Wash your spirit clean.
                                 </ion-card-content>
                             </ion-card>
                         </ion-col>
@@ -118,8 +118,8 @@ export class AppHome {
                                 </ion-card-header>
 
                                 <ion-card-content>
-                                    Keep close to Nature's heart... and break clear away, once in awhile,
-                                    and climb a mountain or spend a week in the woods. Wash your spirit clean.
+                                    Keep close to Nature's heart... and break clear away, once in awhile, and climb a mountain or spend a week in the woods.
+                                    Wash your spirit clean.
                                 </ion-card-content>
                             </ion-card>
                         </ion-col>
@@ -131,8 +131,8 @@ export class AppHome {
                                 </ion-card-header>
 
                                 <ion-card-content>
-                                    Keep close to Nature's heart... and break clear away, once in awhile,
-                                    and climb a mountain or spend a week in the woods. Wash your spirit clean.
+                                    Keep close to Nature's heart... and break clear away, once in awhile, and climb a mountain or spend a week in the woods.
+                                    Wash your spirit clean.
                                 </ion-card-content>
                             </ion-card>
                         </ion-col>

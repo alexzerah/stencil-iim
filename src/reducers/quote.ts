@@ -1,4 +1,4 @@
-import {quoteConstants} from "../actions/quote";
+import { quoteConstants } from "../actions/quote";
 
 const getInitialState = (): any => {
     const quote: QuoteState = {
@@ -15,10 +15,7 @@ const getInitialState = (): any => {
     };
 };
 
-const quote = (
-    state = getInitialState(),
-    action: any
-): QuoteState => {
+const quote = (state = getInitialState(), action: any): QuoteState => {
     switch (action.type) {
         case quoteConstants.GET_QUOTE_REQUEST:
             return {

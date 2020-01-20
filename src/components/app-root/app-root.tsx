@@ -1,21 +1,28 @@
-import { Component, h } from '@stencil/core';
+import { Component, h, State } from "@stencil/core";
 
 @Component({
-  tag: 'app-root',
-  styleUrl: 'app-root.css'
+    tag: "app-root",
+    styleUrl: "app-root.css"
 })
 export class AppRoot {
+    @State() idToken;
 
-  render() {
-    return (
-      <ion-app>
-        <ion-router useHash={false}>
-          <ion-route url="/" component="app-home" />
-          <ion-route url="/list" component="app-list" />
-          <ion-route url="/profile/:name" component="app-profile" />
-        </ion-router>
-        <ion-nav />
-      </ion-app>
-    );
-  }
+    componentWillLoad() {
+        this.idToken = localStorage.getItem("okta_id_token");
+    }
+
+    render() {
+        return (
+            <ion-app>
+                <ion-router useHash={false}>
+                    {!this.idToken && <ion-route-redirect from="*" to="/login"></ion-route-redirect>}
+                    <ion-route url="/" component="app-home" />
+                    <ion-route url="/profile" component="app-profile" />
+                    <ion-route url="/login" component="app-auth" />
+                    <ion-route url="/list" component="app-list" />
+                </ion-router>
+                <ion-nav />
+            </ion-app>
+        );
+    }
 }

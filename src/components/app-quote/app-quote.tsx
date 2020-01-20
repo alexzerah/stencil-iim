@@ -1,11 +1,9 @@
-import {Component, Prop, h} from "@stencil/core";
+import { Component, Prop, h } from "@stencil/core";
 
 @Component({
     tag: "app-quote"
 })
-
 export class AppQuote {
-
     @Prop() quote: QuoteState;
 
     render() {
