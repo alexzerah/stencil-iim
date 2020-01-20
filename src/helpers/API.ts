@@ -12,7 +12,7 @@ instance.interceptors.request.use(
     config => {
         config.params = {
             ...config.params,
-            api_key: "34ab384b7d5cba71275229e3c033874e"
+            api_key: process.env.movie_db_api_key
         };
         return config;
     },

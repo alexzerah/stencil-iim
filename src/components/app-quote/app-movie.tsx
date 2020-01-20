@@ -9,7 +9,7 @@ export class AppMovie {
     render() {
         return (
             <ion-card>
-                <img src="https://ionicframework.com/docs/demos/api/card/madison.jpg" />
+                <img src={`${process.env.movie_db_image_url}${this.movie.backdrop_path}`} />
                 <ion-fab vertical="center" horizontal="end" edge>
                     <ion-fab-button color="warning">
                         <ion-icon name="heart" />
