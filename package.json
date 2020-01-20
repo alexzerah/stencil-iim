@@ -7,6 +7,25 @@
   "files": [
     "dist/"
   ],
+  "lint-staged": {
+    "src/**/*.tsx": [
+      "prettier --write --tab-width 4 --print-width 160",
+      "git add"
+    ],
+    "src/**/*.d.ts": [
+      "prettier --write --tab-width 4 --print-width 130",
+      "git add"
+    ],
+    "src/**/*.ts": [
+      "prettier --write --tab-width 4 --print-width 130",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "scripts": {
     "build": "stencil build",
     "start": "stencil build --dev --watch --serve",
@@ -24,6 +43,9 @@
   },
   "devDependencies": {
     "@stencil/core": "^1.8.4",
-    "@stencil/sass": "^1.1.1"
+    "@stencil/sass": "^1.1.1",
+    "husky": "^4.0.3",
+    "lint-staged": "^9.5.0",
+    "prettier": "^1.19.1"
   }
 }
