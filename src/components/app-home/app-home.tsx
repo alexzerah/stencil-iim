@@ -99,6 +99,12 @@ export class AppHome {
                     <ion-row>
                         <ion-col>
                             <ion-card>
+                                <img src="https://ionicframework.com/docs/demos/api/card/madison.jpg"/>
+                                <ion-fab vertical="center" horizontal="end" edge>
+                                    <ion-fab-button color="warning">
+                                        <ion-icon name="heart"/>
+                                    </ion-fab-button>
+                                </ion-fab>
                                 <ion-card-header>
                                     <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
                                     <ion-card-title>Card Title</ion-card-title>
@@ -108,6 +114,9 @@ export class AppHome {
                                     Keep close to Nature's heart... and break clear away, once in awhile, and climb a mountain or spend a week in the woods.
                                     Wash your spirit clean.
                                 </ion-card-content>
+                                <ion-item href="/view/1" class="activated" color="primary" detail>
+                                    <ion-label>View</ion-label>
+                                </ion-item>
                             </ion-card>
                         </ion-col>
                         <ion-col>

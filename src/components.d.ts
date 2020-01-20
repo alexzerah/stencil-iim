@@ -5,100 +5,118 @@
  * It contains typing information for all components that exist in this project.
  */
 
-import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+
+import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
+
 
 export namespace Components {
-    interface AppAuth {}
-    interface AppHome {
-        quote: QuoteState;
-    }
-    interface AppList {}
-    interface AppProfile {}
-    interface AppQuote {
-        quote: QuoteState;
-    }
-    interface AppRoot {}
+  interface AppAuth {}
+  interface AppHome {
+    'quote': QuoteState;
+  }
+  interface AppList {}
+  interface AppProfile {}
+  interface AppQuote {
+    'quote': QuoteState;
+  }
+  interface AppRoot {}
+  interface AppView {}
 }
 
 declare global {
-    interface HTMLAppAuthElement extends Components.AppAuth, HTMLStencilElement {}
-    var HTMLAppAuthElement: {
-        prototype: HTMLAppAuthElement;
-        new (): HTMLAppAuthElement;
-    };
 
-    interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {}
-    var HTMLAppHomeElement: {
-        prototype: HTMLAppHomeElement;
-        new (): HTMLAppHomeElement;
-    };
 
-    interface HTMLAppListElement extends Components.AppList, HTMLStencilElement {}
-    var HTMLAppListElement: {
-        prototype: HTMLAppListElement;
-        new (): HTMLAppListElement;
-    };
+  interface HTMLAppAuthElement extends Components.AppAuth, HTMLStencilElement {}
+  var HTMLAppAuthElement: {
+    prototype: HTMLAppAuthElement;
+    new (): HTMLAppAuthElement;
+  };
 
-    interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {}
-    var HTMLAppProfileElement: {
-        prototype: HTMLAppProfileElement;
-        new (): HTMLAppProfileElement;
-    };
+  interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {}
+  var HTMLAppHomeElement: {
+    prototype: HTMLAppHomeElement;
+    new (): HTMLAppHomeElement;
+  };
 
-    interface HTMLAppQuoteElement extends Components.AppQuote, HTMLStencilElement {}
-    var HTMLAppQuoteElement: {
-        prototype: HTMLAppQuoteElement;
-        new (): HTMLAppQuoteElement;
-    };
+  interface HTMLAppListElement extends Components.AppList, HTMLStencilElement {}
+  var HTMLAppListElement: {
+    prototype: HTMLAppListElement;
+    new (): HTMLAppListElement;
+  };
 
-    interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {}
-    var HTMLAppRootElement: {
-        prototype: HTMLAppRootElement;
-        new (): HTMLAppRootElement;
-    };
-    interface HTMLElementTagNameMap {
-        "app-auth": HTMLAppAuthElement;
-        "app-home": HTMLAppHomeElement;
-        "app-list": HTMLAppListElement;
-        "app-profile": HTMLAppProfileElement;
-        "app-quote": HTMLAppQuoteElement;
-        "app-root": HTMLAppRootElement;
-    }
+  interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {}
+  var HTMLAppProfileElement: {
+    prototype: HTMLAppProfileElement;
+    new (): HTMLAppProfileElement;
+  };
+
+  interface HTMLAppQuoteElement extends Components.AppQuote, HTMLStencilElement {}
+  var HTMLAppQuoteElement: {
+    prototype: HTMLAppQuoteElement;
+    new (): HTMLAppQuoteElement;
+  };
+
+  interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {}
+  var HTMLAppRootElement: {
+    prototype: HTMLAppRootElement;
+    new (): HTMLAppRootElement;
+  };
+
+  interface HTMLAppViewElement extends Components.AppView, HTMLStencilElement {}
+  var HTMLAppViewElement: {
+    prototype: HTMLAppViewElement;
+    new (): HTMLAppViewElement;
+  };
+  interface HTMLElementTagNameMap {
+    'app-auth': HTMLAppAuthElement;
+    'app-home': HTMLAppHomeElement;
+    'app-list': HTMLAppListElement;
+    'app-profile': HTMLAppProfileElement;
+    'app-quote': HTMLAppQuoteElement;
+    'app-root': HTMLAppRootElement;
+    'app-view': HTMLAppViewElement;
+  }
 }
 
 declare namespace LocalJSX {
-    interface AppAuth {}
-    interface AppHome {
-        quote?: QuoteState;
-    }
-    interface AppList {}
-    interface AppProfile {}
-    interface AppQuote {
-        quote?: QuoteState;
-    }
-    interface AppRoot {}
+  interface AppAuth {}
+  interface AppHome {
+    'quote'?: QuoteState;
+  }
+  interface AppList {}
+  interface AppProfile {}
+  interface AppQuote {
+    'quote'?: QuoteState;
+  }
+  interface AppRoot {}
+  interface AppView {}
 
-    interface IntrinsicElements {
-        "app-auth": AppAuth;
-        "app-home": AppHome;
-        "app-list": AppList;
-        "app-profile": AppProfile;
-        "app-quote": AppQuote;
-        "app-root": AppRoot;
-    }
+  interface IntrinsicElements {
+    'app-auth': AppAuth;
+    'app-home': AppHome;
+    'app-list': AppList;
+    'app-profile': AppProfile;
+    'app-quote': AppQuote;
+    'app-root': AppRoot;
+    'app-view': AppView;
+  }
 }
 
 export { LocalJSX as JSX };
 
+
 declare module "@stencil/core" {
-    export namespace JSX {
-        interface IntrinsicElements {
-            "app-auth": LocalJSX.AppAuth & JSXBase.HTMLAttributes<HTMLAppAuthElement>;
-            "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
-            "app-list": LocalJSX.AppList & JSXBase.HTMLAttributes<HTMLAppListElement>;
-            "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
-            "app-quote": LocalJSX.AppQuote & JSXBase.HTMLAttributes<HTMLAppQuoteElement>;
-            "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
-        }
+  export namespace JSX {
+    interface IntrinsicElements {
+      'app-auth': LocalJSX.AppAuth & JSXBase.HTMLAttributes<HTMLAppAuthElement>;
+      'app-home': LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
+      'app-list': LocalJSX.AppList & JSXBase.HTMLAttributes<HTMLAppListElement>;
+      'app-profile': LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
+      'app-quote': LocalJSX.AppQuote & JSXBase.HTMLAttributes<HTMLAppQuoteElement>;
+      'app-root': LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+      'app-view': LocalJSX.AppView & JSXBase.HTMLAttributes<HTMLAppViewElement>;
     }
+  }
 }
+
+
