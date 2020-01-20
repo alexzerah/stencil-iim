@@ -43,13 +43,13 @@ export class AppHome {
         this.storeUnsubscribe();
     }
 
-    render() {
-        return [
-            <ion-header>
-                <ion-toolbar color="primary">
-                    <ion-title>Home</ion-title>
-                </ion-toolbar>
-            </ion-header>,
+  render() {
+    return [
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-title>Home 🏡</ion-title>
+        </ion-toolbar>
+      </ion-header>,
 
             <ion-content class="ion-padding">
                 <p>
