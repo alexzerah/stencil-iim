@@ -24,4 +24,4 @@ $RECYCLE.BIN/
 Thumbs.db
 UserInterfaceState.xcuserstate
 .env
-component.d.ts
+components.d.ts
