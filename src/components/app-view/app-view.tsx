@@ -72,15 +72,17 @@ export class AppView {
 
                         <ion-card-content>
                             <ion-row>
-                                <p>{`Revenu: ${movie.revenue}`}</p>
-                                <p>{`Budget: ${movie.budget}`}</p>
-                                <p>{movie.overview}</p>
+                                <ion-item>{`Revenu: ${movie.revenue} $`}</ion-item>
+                                <ion-item>{`Budget: ${movie.budget} $`}</ion-item>
+                            </ion-row>
+                            <ion-row>
+                                <ion-item>{movie.overview}</ion-item>
                             </ion-row>
                             {[...movie.production_companies]
                                 .map(company => (
                                     <ion-col>
                                         <p>{company.name}</p>
-                                        <img class="movie-img" src={`${process.env.movie_db_image_url}${company.logo_path}`} />
+                                        {company.logo_path && <img class="movie-img" src={`${process.env.movie_db_image_url}${company.logo_path}`} />}
                                     </ion-col>
                                 ))
                                 .reduce(function(r, element, index) {

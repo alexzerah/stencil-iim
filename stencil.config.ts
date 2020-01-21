@@ -1,11 +1,11 @@
 import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
-//import dotenvPlugin from 'rollup-plugin-dotenv';
+import dotenvPlugin from 'rollup-plugin-dotenv';
 
 export const config: Config = {
   plugins: [
     sass(),
-    //dotenvPlugin()
+    dotenvPlugin()
   ],
   outputTargets: [{
     type: 'www',
