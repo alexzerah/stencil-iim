@@ -1,4 +1,4 @@
-#About us
+# About us
 We are a team of young Stencil enthusiasts !
 We work at la Defense, and enjoy the parisian life #DevLife #HealthyWorkEnvironment
 Follow us in the street if you are a psycho !
