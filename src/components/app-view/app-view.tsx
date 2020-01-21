@@ -40,7 +40,6 @@ export class AppView {
 
     render() {
         const { movie } = this.movies;
-        console.log(movie);
         return [
             <ion-header>
                 <ion-toolbar color="primary">
@@ -56,11 +55,6 @@ export class AppView {
                 ) : (
                     <ion-card class="movie-card">
                         <img class="movie-img" src={`${process.env.movie_db_image_url}${movie.backdrop_path}`} />
-                        <ion-fab class="movie-fav" horizontal="end" edge>
-                            <ion-fab-button color="warning">
-                                <ion-icon name="heart" />
-                            </ion-fab-button>
-                        </ion-fab>
                         <ion-card-header>
                             <ion-card-subtitle>
                                 {movie.genres.map((genre, index) => (movie.genres[index + 1] ? genre.name + ", " : genre.name))}

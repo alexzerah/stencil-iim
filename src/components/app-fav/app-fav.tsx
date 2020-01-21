@@ -7,102 +7,30 @@ import { Component, h } from "@stencil/core";
 })
 export class AppFav {
     render() {
+        const fav: string = localStorage.getItem("fav");
+        const parseFav: any = fav && JSON.parse(fav);
+
         return [
             <app-menu />,
 
             <ion-content class="ion-padding">
                 <ion-grid>
-                    <ion-row>
-                        <ion-col>
-                            <ion-card>
-                                <ion-card-header>
-                                    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-                                    <ion-card-title>Card Title</ion-card-title>
-                                </ion-card-header>
-
-                                <ion-card-content>
-                                    Keep close to Nature's heart... and break clear away, once in awhile, and climb a mountain or spend a week in the woods.
-                                    Wash your spirit clean.
-                                </ion-card-content>
-                            </ion-card>
-                        </ion-col>
-                        <ion-col>
-                            <ion-card>
-                                <ion-card-header>
-                                    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-                                    <ion-card-title>Card Title</ion-card-title>
-                                </ion-card-header>
-
-                                <ion-card-content>
-                                    Keep close to Nature's heart... and break clear away, once in awhile, and climb a mountain or spend a week in the woods.
-                                    Wash your spirit clean.
-                                </ion-card-content>
-                            </ion-card>
-                        </ion-col>
-                        <ion-col>
-                            <ion-card>
-                                <ion-card-header>
-                                    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-                                    <ion-card-title>Card Title</ion-card-title>
-                                </ion-card-header>
-
-                                <ion-card-content>
-                                    Keep close to Nature's heart... and break clear away, once in awhile, and climb a mountain or spend a week in the woods.
-                                    Wash your spirit clean.
-                                </ion-card-content>
-                            </ion-card>
-                        </ion-col>
-                    </ion-row>
-                    <ion-row>
-                        <ion-col>
-                            <ion-card>
-                                <img src="https://ionicframework.com/docs/demos/api/card/madison.jpg" />
-                                <ion-fab vertical="center" horizontal="end" edge>
-                                    <ion-fab-button color="warning">
-                                        <ion-icon name="heart" />
-                                    </ion-fab-button>
-                                </ion-fab>
-                                <ion-card-header>
-                                    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-                                    <ion-card-title>Card Title</ion-card-title>
-                                </ion-card-header>
-
-                                <ion-card-content>
-                                    Keep close to Nature's heart... and break clear away, once in awhile, and climb a mountain or spend a week in the woods.
-                                    Wash your spirit clean.
-                                </ion-card-content>
-                                <ion-item href="/view/15" class="activated" color="primary" detail>
-                                    <ion-label>View</ion-label>
-                                </ion-item>
-                            </ion-card>
-                        </ion-col>
-                        <ion-col>
-                            <ion-card>
-                                <ion-card-header>
-                                    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-                                    <ion-card-title>Card Title</ion-card-title>
-                                </ion-card-header>
-
-                                <ion-card-content>
-                                    Keep close to Nature's heart... and break clear away, once in awhile, and climb a mountain or spend a week in the woods.
-                                    Wash your spirit clean.
-                                </ion-card-content>
-                            </ion-card>
-                        </ion-col>
-                        <ion-col>
-                            <ion-card>
-                                <ion-card-header>
-                                    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-                                    <ion-card-title>Card Title</ion-card-title>
-                                </ion-card-header>
-
-                                <ion-card-content>
-                                    Keep close to Nature's heart... and break clear away, once in awhile, and climb a mountain or spend a week in the woods.
-                                    Wash your spirit clean.
-                                </ion-card-content>
-                            </ion-card>
-                        </ion-col>
-                    </ion-row>
+                    {parseFav ? (
+                        [...parseFav]
+                            .map(fav => (
+                                <ion-col>
+                                    <app-movie movie={fav} />
+                                </ion-col>
+                            ))
+                            .reduce(function(r, element, index) {
+                                index % 3 === 0 && r.push([]);
+                                r[r.length - 1].push(element);
+                                return r;
+                            }, [])
+                            .map(rowContent => <ion-row>{rowContent}</ion-row>)
+                    ) : (
+                        <p>No favorites</p>
+                    )}
                 </ion-grid>
             </ion-content>
         ];
