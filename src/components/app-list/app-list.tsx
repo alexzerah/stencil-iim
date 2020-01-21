@@ -4,7 +4,8 @@ import { Component, h } from "@stencil/core";
     tag: "app-list",
     styleUrl: "app-list.scss"
 })
-export class AppProfile {
+export class AppList {
+
     render() {
         return [
             <ion-header>
