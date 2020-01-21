@@ -15,11 +15,13 @@ export class AppRoot {
         return (
             <ion-app>
                 <ion-router useHash={false}>
-                    {!this.idToken && <ion-route-redirect from="*" to="/login"></ion-route-redirect>}
+                    {!this.idToken && <ion-route-redirect from="*" to="/login" />}
                     <ion-route url="/" component="app-home" />
-                    <ion-route url="/profile" component="app-profile" />
                     <ion-route url="/login" component="app-auth" />
                     <ion-route url="/list" component="app-list" />
+                    <ion-route url="/fav" component="app-fav" />
+                    <ion-route url="/view/:id" component="app-view" />
+                    <ion-route url="/profile/:name" component="app-profile" />
                 </ion-router>
                 <ion-nav />
             </ion-app>
