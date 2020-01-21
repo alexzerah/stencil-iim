@@ -5,152 +5,153 @@
  * It contains typing information for all components that exist in this project.
  */
 
-
-import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
-
+import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 
 export namespace Components {
-  interface AppAuth {}
-  interface AppFav {}
-  interface AppHome {
-    'movies': {
-      movies: MovieState[];
-      loading: boolean;
-      totalPages: number;
-    };
-  }
-  interface AppList {}
-  interface AppMenu {}
-  interface AppMovie {
-    'movie': MovieState;
-  }
-  interface AppProfile {}
-  interface AppRoot {}
-  interface AppView {
-    'id': string;
-  }
+    interface AppAuth {}
+    interface AppFav {}
+    interface AppHome {
+        movies: {
+            movies: MovieState[];
+            loading: boolean;
+            totalPages: number;
+        };
+    }
+    interface AppList {}
+    interface AppMenu {}
+    interface AppMovie {
+        movie: MovieState;
+    }
+    interface AppProfile {}
+    interface AppRoot {}
+    interface AppView {
+        id: string;
+        movies: {
+            movie: MovieDetailsState;
+            movieLoading: boolean;
+        };
+    }
 }
 
 declare global {
+    interface HTMLAppAuthElement extends Components.AppAuth, HTMLStencilElement {}
+    var HTMLAppAuthElement: {
+        prototype: HTMLAppAuthElement;
+        new (): HTMLAppAuthElement;
+    };
 
+    interface HTMLAppFavElement extends Components.AppFav, HTMLStencilElement {}
+    var HTMLAppFavElement: {
+        prototype: HTMLAppFavElement;
+        new (): HTMLAppFavElement;
+    };
 
-  interface HTMLAppAuthElement extends Components.AppAuth, HTMLStencilElement {}
-  var HTMLAppAuthElement: {
-    prototype: HTMLAppAuthElement;
-    new (): HTMLAppAuthElement;
-  };
+    interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {}
+    var HTMLAppHomeElement: {
+        prototype: HTMLAppHomeElement;
+        new (): HTMLAppHomeElement;
+    };
 
-  interface HTMLAppFavElement extends Components.AppFav, HTMLStencilElement {}
-  var HTMLAppFavElement: {
-    prototype: HTMLAppFavElement;
-    new (): HTMLAppFavElement;
-  };
+    interface HTMLAppListElement extends Components.AppList, HTMLStencilElement {}
+    var HTMLAppListElement: {
+        prototype: HTMLAppListElement;
+        new (): HTMLAppListElement;
+    };
 
-  interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {}
-  var HTMLAppHomeElement: {
-    prototype: HTMLAppHomeElement;
-    new (): HTMLAppHomeElement;
-  };
+    interface HTMLAppMenuElement extends Components.AppMenu, HTMLStencilElement {}
+    var HTMLAppMenuElement: {
+        prototype: HTMLAppMenuElement;
+        new (): HTMLAppMenuElement;
+    };
 
-  interface HTMLAppListElement extends Components.AppList, HTMLStencilElement {}
-  var HTMLAppListElement: {
-    prototype: HTMLAppListElement;
-    new (): HTMLAppListElement;
-  };
+    interface HTMLAppMovieElement extends Components.AppMovie, HTMLStencilElement {}
+    var HTMLAppMovieElement: {
+        prototype: HTMLAppMovieElement;
+        new (): HTMLAppMovieElement;
+    };
 
-  interface HTMLAppMenuElement extends Components.AppMenu, HTMLStencilElement {}
-  var HTMLAppMenuElement: {
-    prototype: HTMLAppMenuElement;
-    new (): HTMLAppMenuElement;
-  };
+    interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {}
+    var HTMLAppProfileElement: {
+        prototype: HTMLAppProfileElement;
+        new (): HTMLAppProfileElement;
+    };
 
-  interface HTMLAppMovieElement extends Components.AppMovie, HTMLStencilElement {}
-  var HTMLAppMovieElement: {
-    prototype: HTMLAppMovieElement;
-    new (): HTMLAppMovieElement;
-  };
+    interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {}
+    var HTMLAppRootElement: {
+        prototype: HTMLAppRootElement;
+        new (): HTMLAppRootElement;
+    };
 
-  interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {}
-  var HTMLAppProfileElement: {
-    prototype: HTMLAppProfileElement;
-    new (): HTMLAppProfileElement;
-  };
-
-  interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {}
-  var HTMLAppRootElement: {
-    prototype: HTMLAppRootElement;
-    new (): HTMLAppRootElement;
-  };
-
-  interface HTMLAppViewElement extends Components.AppView, HTMLStencilElement {}
-  var HTMLAppViewElement: {
-    prototype: HTMLAppViewElement;
-    new (): HTMLAppViewElement;
-  };
-  interface HTMLElementTagNameMap {
-    'app-auth': HTMLAppAuthElement;
-    'app-fav': HTMLAppFavElement;
-    'app-home': HTMLAppHomeElement;
-    'app-list': HTMLAppListElement;
-    'app-menu': HTMLAppMenuElement;
-    'app-movie': HTMLAppMovieElement;
-    'app-profile': HTMLAppProfileElement;
-    'app-root': HTMLAppRootElement;
-    'app-view': HTMLAppViewElement;
-  }
+    interface HTMLAppViewElement extends Components.AppView, HTMLStencilElement {}
+    var HTMLAppViewElement: {
+        prototype: HTMLAppViewElement;
+        new (): HTMLAppViewElement;
+    };
+    interface HTMLElementTagNameMap {
+        "app-auth": HTMLAppAuthElement;
+        "app-fav": HTMLAppFavElement;
+        "app-home": HTMLAppHomeElement;
+        "app-list": HTMLAppListElement;
+        "app-menu": HTMLAppMenuElement;
+        "app-movie": HTMLAppMovieElement;
+        "app-profile": HTMLAppProfileElement;
+        "app-root": HTMLAppRootElement;
+        "app-view": HTMLAppViewElement;
+    }
 }
 
 declare namespace LocalJSX {
-  interface AppAuth {}
-  interface AppFav {}
-  interface AppHome {
-    'movies'?: {
-      movies: MovieState[];
-      loading: boolean;
-      totalPages: number;
-    };
-  }
-  interface AppList {}
-  interface AppMenu {}
-  interface AppMovie {
-    'movie'?: MovieState;
-  }
-  interface AppProfile {}
-  interface AppRoot {}
-  interface AppView {
-    'id'?: string;
-  }
+    interface AppAuth {}
+    interface AppFav {}
+    interface AppHome {
+        movies?: {
+            movies: MovieState[];
+            loading: boolean;
+            totalPages: number;
+        };
+    }
+    interface AppList {}
+    interface AppMenu {}
+    interface AppMovie {
+        movie?: MovieState;
+    }
+    interface AppProfile {}
+    interface AppRoot {}
+    interface AppView {
+        id?: string;
+        movies?: {
+            movie: MovieDetailsState;
+            movieLoading: boolean;
+        };
+    }
 
-  interface IntrinsicElements {
-    'app-auth': AppAuth;
-    'app-fav': AppFav;
-    'app-home': AppHome;
-    'app-list': AppList;
-    'app-menu': AppMenu;
-    'app-movie': AppMovie;
-    'app-profile': AppProfile;
-    'app-root': AppRoot;
-    'app-view': AppView;
-  }
+    interface IntrinsicElements {
+        "app-auth": AppAuth;
+        "app-fav": AppFav;
+        "app-home": AppHome;
+        "app-list": AppList;
+        "app-menu": AppMenu;
+        "app-movie": AppMovie;
+        "app-profile": AppProfile;
+        "app-root": AppRoot;
+        "app-view": AppView;
+    }
 }
 
 export { LocalJSX as JSX };
 
-
 declare module "@stencil/core" {
-  export namespace JSX {
-    interface IntrinsicElements {
-      'app-auth': LocalJSX.AppAuth & JSXBase.HTMLAttributes<HTMLAppAuthElement>;
-      'app-fav': LocalJSX.AppFav & JSXBase.HTMLAttributes<HTMLAppFavElement>;
-      'app-home': LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
-      'app-list': LocalJSX.AppList & JSXBase.HTMLAttributes<HTMLAppListElement>;
-      'app-menu': LocalJSX.AppMenu & JSXBase.HTMLAttributes<HTMLAppMenuElement>;
-      'app-movie': LocalJSX.AppMovie & JSXBase.HTMLAttributes<HTMLAppMovieElement>;
-      'app-profile': LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
-      'app-root': LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
-      'app-view': LocalJSX.AppView & JSXBase.HTMLAttributes<HTMLAppViewElement>;
+    export namespace JSX {
+        interface IntrinsicElements {
+            "app-auth": LocalJSX.AppAuth & JSXBase.HTMLAttributes<HTMLAppAuthElement>;
+            "app-fav": LocalJSX.AppFav & JSXBase.HTMLAttributes<HTMLAppFavElement>;
+            "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
+            "app-list": LocalJSX.AppList & JSXBase.HTMLAttributes<HTMLAppListElement>;
+            "app-menu": LocalJSX.AppMenu & JSXBase.HTMLAttributes<HTMLAppMenuElement>;
+            "app-movie": LocalJSX.AppMovie & JSXBase.HTMLAttributes<HTMLAppMovieElement>;
+            "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
+            "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+            "app-view": LocalJSX.AppView & JSXBase.HTMLAttributes<HTMLAppViewElement>;
+        }
     }
-  }
 }
-
-
