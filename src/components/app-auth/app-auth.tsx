@@ -8,8 +8,7 @@ declare const OktaAuth: any;
 export class AppAuth {
     @State() authClient: any;
     @Element() host: HTMLElement;
-    private nav: HTMLIonNavElement = document.querySelector('ion-nav')
-
+    private nav: HTMLIonNavElement = document.querySelector("ion-nav");
 
     constructor() {
         this.authClient = new OktaAuth({
@@ -22,17 +21,16 @@ export class AppAuth {
     componentWillLoad() {
         let idToken = localStorage.getItem("okta_id_token");
         if (idToken) {
-            this.nav.push("/profile")
+            this.nav.push("/profile");
         }
     }
 
-    @Listen('keydown')
+    @Listen("keydown")
     handleKeyDown(ev: KeyboardEvent) {
-        if (ev.key === 'Enter') {
+        if (ev.key === "Enter") {
             this.login();
         }
     }
-
 
     login() {
         let inputs = this.host.querySelectorAll("input");
@@ -41,7 +39,8 @@ export class AppAuth {
             password: inputs[1].value
         };
 
-        return this.authClient.signIn(user)
+        return this.authClient
+            .signIn(user)
             .then(res => {
                 if (res.status === "SUCCESS") {
                     return this.authClient.token
@@ -49,21 +48,17 @@ export class AppAuth {
                             responseType: "id_token",
                             scopes: ["openid", "profile", "email"],
                             sessionToken: res.sessionToken,
-                            redirectUri: "http://localhost:3333"
+                            redirectUri: process.env.redirectUri
                         })
                         .then(token => {
-                            localStorage.setItem(
-                                'okta_id_token',
-                                JSON.stringify(token)
-                            );
-                            this.nav.push("app-profile")
+                            localStorage.setItem("okta_id_token", JSON.stringify(token));
+                            this.nav.push("app-profile");
                         });
-
                 } else {
                     throw `Unable to handle ${res.status} status code`;
                 }
             })
-            .fail(function (err) {
+            .fail(function(err) {
                 console.error(err);
             });
     }
@@ -74,17 +69,13 @@ export class AppAuth {
                 <div class="form-item">
                     <label>
                         Username:
-            <input type="text" name="username" autocomplete="username" />
+                        <input type="text" name="username" autocomplete="username" />
                     </label>
                 </div>
                 <div class="form-item">
                     <label>
                         Password:
-            <input
-                            type="password"
-                            name="password"
-                            autocomplete="current-password"
-                        />
+                        <input type="password" name="password" autocomplete="current-password" />
                     </label>
                 </div>
                 <div class="form-actions">
@@ -92,8 +83,7 @@ export class AppAuth {
                         Login
                     </button>
                 </div>
-            </form>);
+            </form>
+        );
     }
 }
-
-

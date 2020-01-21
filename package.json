@@ -36,11 +36,11 @@
   "dependencies": {
     "@ionic/core": "^4.11.7",
     "@stencil/redux": "^0.1.2",
+    "@stencil/router": "1.0.1",
     "axios": "^0.19.1",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
-    "@stencil/router": "1.0.1",
     "rollup-plugin-dotenv": "^0.2.0"
   },
   "devDependencies": {

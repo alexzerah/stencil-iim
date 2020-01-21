@@ -1,0 +1,53 @@
+{
+    "version": 2,
+    "name": "stencil-app",
+    "build": {
+        "env": {
+            "okta_clientId": "@okta_clientid",
+            "okta_url": "@okta_url"
+        }
+    },
+    "builds": [
+        {
+            "src": "package.json",
+            "use": "@now/static-build",
+            "config": {
+                "distDir": "www",
+                "useBuildUtils": "@now/build-utils@canary"
+            }
+        }
+    ],
+    "routes": [
+        {
+            "src": "^/assets/(.*)",
+            "dest": "/assets/$1"
+        },
+        {
+            "src": "^/build/(.+)",
+            "dest": "/build/$1"
+        },
+        {
+            "src": "^/favicon.ico",
+            "dest": "/assets/icon/favicon.ico"
+        },
+        {
+            "src": "^/icon.png",
+            "dest": "/assets/icon/icon.png"
+        },
+        {
+            "src": "^/manifest.json",
+            "dest": "/assets/manifest.json"
+        },
+        {
+            "src": "^/sw.js",
+            "headers": {
+                "cache-control": "s-maxage=0"
+            },
+            "dest": "/sw.js"
+        },
+        {
+            "src": "^/(.*)",
+            "dest": "/index.html"
+        }
+    ]
+}
